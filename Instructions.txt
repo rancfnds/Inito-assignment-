@@ -1,0 +1,99 @@
+ Implemented Functionalities:
+
+1. mkdir (Make Directory):
+   - Creates a new directory in the current path.
+
+2. cd (Change Directory):
+   - Changes the current directory based on the provided path.
+   - Supports navigation with "..", "/", and relative or absolute paths.
+
+3. ls (List Contents):
+   - Lists the contents of the specified directory.
+   - Provides information about files and subdirectories.
+
+4. touch:
+   - Creates a new empty file in the current path.
+
+5. echo
+   - Writes text content to a file.
+
+6. mv (Move):
+   - Moves a file or directory to another location.
+
+7. cp (Copy):
+   - Copies a file or directory to another location.
+
+8. rm (Remove):
+   - Removes a file or directory.
+
+9. saveState:
+   - Saves the current state of the file system to a file for future use.
+
+10. loadState:
+   - Loads the file system state from a file, allowing the program to start from a previously saved state.
+
+Improvements to the Design:
+
+1. Serialization for State Persistence:
+   - Implemented serialization using `ObjectOutputStream` to save the file system state to a file.
+   - Used `ObjectInputStream` to deserialize and load the file system state from a file.
+   - This allows the program to persist the file system state across different program executions.
+
+2. Modular Code Structure:
+   - Organized the code into methods for each functionality, improving readability and maintainability.
+   - This makes it easier to understand and modify specific parts of the program.
+
+3.Error Handling:
+   - Implemented error handling to gracefully manage exceptions during file system operations.
+   - Provides meaningful error messages to the user in case of issues.
+
+Instructions to Run and Test the Program:
+ Running the Program:
+
+1. Compilation:
+   - Open a terminal or command prompt.
+   - Navigate to the directory containing the `InMemoryFileSystem.java` file.
+   - Compile the code using the command:
+     ```bash
+     javac InMemoryFileSystem.java
+     ```
+
+2. Execution:
+   - Run the compiled program using the command:
+     ```bash
+     java InMemoryFileSystem
+     ```
+
+ Interacting with the File System:
+
+- Follow the instructions provided in the program prompt.
+- Input commands like `mkdir`, `cd`, `ls`, etc., and the program will respond accordingly.
+- Explore the file system, create directories, files, move, copy, and remove items.
+
+ Testing the Save and Load State Functionality:
+
+1. Saving State
+   - While the program is running, use the command:
+     ```bash
+     saveState state.dat
+     ```
+   - This will save the current state of the file system to a file named `state.dat`.
+
+2. Exiting the Program:
+   - Type `exit` to exit the program.
+
+3. Loading State:
+   - Start a new instance of the program using the command:
+     ```bash
+     java InMemoryFileSystem loadState state.dat
+     ```
+   - This will load the file system state from the `state.dat` file, restoring the previous state.
+
+4. Continue Interaction:
+   - You can now continue interacting with the file system from the restored state.
+   - Test commands, create new items, and observe the persistence of the file system.
+
+ Additional Testing:
+
+- Test various commands, including edge cases, to ensure the program handles them gracefully.
+- Experiment with saving and loading states to observe the persistence of the file system across program executions.
